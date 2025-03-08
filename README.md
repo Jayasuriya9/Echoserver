@@ -17,20 +17,16 @@ Implementation using Python code
 
 ### Step 3:
 
-Testing the server and client 
+Testing the server and client
 
 ## PROGRAM:
+Name: J Jayasuriya
+Reg No:212223230088
+# echo-server.py:
 ```
-# echo-server.py
-
-
 import socket
-
-
 HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
 PORT = 65432  # Port to listen on (non-privileged ports are > 1023)
-
-
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
     s.listen()
@@ -42,34 +38,26 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             if not data:
                 break
             conn.sendall(data)
-
 ```
-CLIENT CODE:
-```
-
 # echo-client.py
-
-
+```
 import socket
-
-
 HOST = "127.0.0.1"  # The server's hostname or IP address
 PORT = 65432  # The port used by the server
-
-
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     s.sendall(b"Hello, world")
     data = s.recv(1024)
-
-
 print(f"Received {data!r}")
 ```
 ## OUTPUT:
+# echo-server.py:
 
-![image](https://github.com/user-attachments/assets/6fea722c-1714-4422-a812-d00393a7ddfa)
+![image](https://github.com/user-attachments/assets/538bf64a-db8d-4add-b052-aa8666b3877b)
 
-![image](https://github.com/user-attachments/assets/1139c1bf-f7a6-4bac-b63f-26becfa2cd37)
+# echo-client.py
+![image](https://github.com/user-attachments/assets/31185034-f73c-45b1-bb5b-b3ed7be72b41)
+
 
 ## RESULT:
 The program is executed successfully
